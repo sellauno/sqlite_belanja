@@ -18,15 +18,26 @@ class DbHelper {
     return itemDatabase;
   }
 
-//buat tabel baru dengan nama item
+  FutureOr<void> _onUpgrade(Database db, int olVersion, int newVersion){
+    _createDb(db, newVersion);
+  }
+
+  //buat tabel baru dengan nama item
   void _createDb(Database db, int version) async {
+    var batchTemp = db.batch();
+
+    await batchTemp.execute('''
+      DROP TABLE EXIST item
+    ''');
+   
     await db.execute('''
-CREATE TABLE item (
-id INTEGER PRIMARY KEY AUTOINCREMENT,
-name TEXT,
-price INTEGER
-)
-''');
+      CREATE TABLE item (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT,
+      price INTEGER
+      )
+    ''');
+    batchTemp.commit();
   }
 
 //select databases

@@ -17,6 +17,7 @@ class HomeState extends State<Home> {
   List<Item> itemList;
   @override
   Widget build(BuildContext context) {
+    updateListView();
     if (itemList == null) {
       itemList = [];
     }
@@ -76,17 +77,23 @@ class HomeState extends State<Home> {
               this.itemList[index].name,
               style: textStyle,
             ),
-            subtitle: Text(this.itemList[index].price.toString()),
+            subtitle: Text("Harga : " + this.itemList[index].price.toString() + 
+            "\nStok : " + this.itemList[index].stok.toString()+
+            "\nKode Barang : " + this.itemList[index].kodeBarang),
             trailing: GestureDetector(
               child: Icon(Icons.delete),
               onTap: () async {
-//TODO 3 Panggil Fungsi untuk Delete dari DB berdasarkan Item
+                //TODO 3 Panggil Fungsi untuk Delete dari DB berdasarkan Item
+                await dbHelper.delete(itemList[index].id);
+                updateListView();
               },
             ),
             onTap: () async {
               var item =
                   await navigateToEntryForm(context, this.itemList[index]);
-//TODO 4 Panggil Fungsi untuk Edit data
+                //TODO 4 Panggil Fungsi untuk Edit data
+                await dbHelper.update(item);
+                updateListView();
             },
           ),
         );
