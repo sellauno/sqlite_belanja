@@ -1,23 +1,23 @@
 # Screenshots
 - Tampilan awal
 
-![screenshot] (image/tampilanAwal.jpeg)
+![screenshot](image/tampilanAwal.jpeg)
 
 - Tambah Data
 
-![screenshot] (image/add.jpeg)
+![screenshot](image/add.jpeg)
 
 - Edit Data
 
-![screenshot] (image/edit.jpeg)
+![screenshot](image/edit.jpeg)
 
 - Tampilan setelah di edit
 
-![screenshot] (image/edited.jpeg)
+![screenshot](image/edited.jpeg)
 
 - Tampilan setelah delete
 
-![screenshot] (image/delete.jpeg)
+![screenshot](image/delete.jpeg)
 
 # sqlite_belanja
 
