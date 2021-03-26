@@ -1,3 +1,24 @@
+# Screenshots
+- Tampilan awal
+
+![screenshot] (image/tampilanAwal.jpeg)
+
+- Tambah Data
+
+![screenshot] (image/add.jpeg)
+
+- Edit Data
+
+![screenshot] (image/edit.jpeg)
+
+- Tampilan setelah di edit
+
+![screenshot] (image/edited.jpeg)
+
+- Tampilan setelah delete
+
+![screenshot] (image/delete.jpeg)
+
 # sqlite_belanja
 
 A new Flutter project.

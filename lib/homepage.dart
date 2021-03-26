@@ -12,12 +12,16 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
+
+  void initState(){
+    updateListView();
+  }
+
   DbHelper dbHelper = DbHelper();
   int count = 0;
   List<Item> itemList;
   @override
   Widget build(BuildContext context) {
-    updateListView();
     if (itemList == null) {
       itemList = [];
     }
